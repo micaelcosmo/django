@@ -44,3 +44,4 @@ def get_absolute_url(self):
                    args=[self.publish.year,
                          self.publish.month,
                          self.publish.day, self.slug])
+
