@@ -6,6 +6,11 @@
     <p class="date">
         Published {{ post.publish }} by {{ post.author }}
     </p>
+    <p>
+        <a href="{% url 'blog:post_share' post.id %}">
+         Share this post
+        </a>
+    </p>
     {% with comments.count as total_comments %}
         <h2>
             {{ total_comments }} comment{{ total_comments|pluralize }}
@@ -35,9 +40,5 @@
         </form>
     {% endif %}
     {{ post.body|linebreaks }}
-    <p>
-        <a href="{% url 'blog:post_share' post.id %}">
-         Share this post
-        </a>
-    </p>
+
 {% endblock %}
